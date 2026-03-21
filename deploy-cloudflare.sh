@@ -72,6 +72,8 @@ ok "Build complete → $OUT_DIR"
 log "Deploying to Cloudflare Pages project: $PROJECT"
 echo ""
 
+FUNCTIONS_DIR="$(cd "$(dirname "$0")/functions" && pwd)"
+
 DEPLOY_OUTPUT=$($WRANGLER pages deploy "$OUT_DIR" \
   --project-name "$PROJECT" \
   --commit-dirty=true \
